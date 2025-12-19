@@ -1,6 +1,5 @@
 /* ================================
    VISIT GARDENIA – OFFICIAL STYLE
-   Clean, professional, system fonts
    ================================ */
 
 :root {
@@ -39,7 +38,6 @@ img { max-width: 100%; display: block; }
   padding: 28px 0 22px;
 }
 
-/* LOGO */
 .logo-wrapper {
   text-align: center;
   margin-bottom: 18px;
@@ -54,7 +52,6 @@ img { max-width: 100%; display: block; }
    NAVIGATION
    ================================ */
 
-/* DESKTOP: horizontal + LEFT aligned */
 .main-nav {
   display: flex;
   justify-content: flex-start;
@@ -75,26 +72,30 @@ img { max-width: 100%; display: block; }
 }
 
 /* ================================
-   HERO
+   HERO (FIXED OVERLAY)
    ================================ */
 
 .hero--image {
+  position: relative;              /* REQUIRED */
   background-image: url("../images/hero-gardenia.jpg");
-  background-size: cover;              /* keeps correct proportions */
-  background-position: center;         /* crops instead of stretching */
+  background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
   min-height: 75vh;
+}
+
+/* Overlay now covers FULL hero */
+.hero-overlay {
+  position: absolute;              /* REQUIRED */
+  inset: 0;                        /* top, right, bottom, left = 0 */
+  background: rgba(11, 18, 32, 0.55);
   display: flex;
   align-items: center;
 }
 
-.hero-overlay {
+.hero-content {
   width: 100%;
   padding: 110px 0;
-  background: linear-gradient(
-    rgba(11, 18, 32, 0.55),
-    rgba(11, 18, 32, 0.55)
-  );
 }
 
 .hero h1 {
@@ -132,7 +133,7 @@ img { max-width: 100%; display: block; }
 }
 
 /* ================================
-   TWO COLUMN LAYOUT
+   TWO COLUMN
    ================================ */
 
 .two-column {
@@ -145,7 +146,7 @@ img { max-width: 100%; display: block; }
 .image-content img { border-radius: 20px; }
 
 /* ================================
-   GOOGLE MAP
+   MAP
    ================================ */
 
 .map-container {
@@ -205,22 +206,21 @@ img { max-width: 100%; display: block; }
   .two-column { grid-template-columns: 1fr; }
 }
 
-/* MOBILE: nav centered & hero cropped nicely (no stretched look) */
 @media (max-width: 768px) {
 
   .main-nav { justify-content: center; }
 
-  /* Make hero a normal “banner” ratio on mobile */
+  /* Mobile hero crop */
   .hero--image {
-    min-height: 58vh;                 /* less tall = better ratio */
-    background-position: center 35%;  /* crop a bit higher (adjust look) */
+    height: 55vh;
+    min-height: unset;
+    background-position: center 30%;
   }
 
-  /* Reduce overlay padding so it doesn’t force extra height */
-  .hero-overlay {
-    padding: 72px 0;
+  .hero-content {
+    padding: 48px 0;
   }
 
-  .hero h1 { font-size: 32px; }
-  .hero p  { font-size: 16px; }
+  .hero h1 { font-size: 30px; }
+  .hero p { font-size: 16px; }
 }
