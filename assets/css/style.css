@@ -43,12 +43,10 @@ img {
 .site-header {
   border-bottom: 1px solid var(--border);
   padding: 28px 0 22px;
-  text-align: center;
 }
 
 /* LOGO */
 .logo-wrapper {
-  display: block;
   text-align: center;
   margin-bottom: 18px;
 }
@@ -58,11 +56,17 @@ img {
   margin: 0 auto;
 }
 
-/* NAVIGATION */
+/* ================================
+   NAVIGATION
+   ================================ */
+
+/* DESKTOP: horizontal + LEFT aligned */
 .main-nav {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 36px;
+  width: min(1100px, 92%);
+  margin: 0 auto;
 }
 
 .main-nav a {
@@ -172,7 +176,7 @@ img {
 }
 
 /* ================================
-   CONTACT PAGE
+   CONTACT
    ================================ */
 
 .contact-box {
@@ -182,11 +186,6 @@ img {
   border: 1px solid var(--border);
   background: #ffffff;
   max-width: 520px;
-}
-
-.contact-box p {
-  margin-bottom: 18px;
-  font-size: 16px;
 }
 
 /* ================================
@@ -210,7 +209,7 @@ img {
 }
 
 /* ================================
-   RESPONSIVE
+   RESPONSIVE FIXES
    ================================ */
 
 @media (max-width: 900px) {
@@ -219,10 +218,10 @@ img {
   }
 }
 
+/* MOBILE NAV — HORIZONTAL + CENTERED */
 @media (max-width: 768px) {
   .main-nav {
-    flex-direction: column;
-    gap: 14px;
+    justify-content: center;
   }
 
   .hero-overlay {
