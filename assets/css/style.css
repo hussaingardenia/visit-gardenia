@@ -1,34 +1,26 @@
-/* =========================================================
-   Visit Gardenia – Official Website
-   Clean, cultural, museum-grade design
-   HTML + CSS only
-   ========================================================= */
-
-/* ---------- ROOT VARIABLES ---------- */
+/* ================================
+   VISIT GARDENIA – OFFICIAL STYLE
+   ================================ */
 
 :root {
   --blue: #0b4fa2;
   --teal: #1aa6a0;
-
-  --ink: #0b1220;
-  --ink-soft: rgba(11, 18, 32, 0.75);
-
+  --text: #0b1220;
+  --text-soft: rgba(11, 18, 32, 0.7);
   --bg: #ffffff;
   --bg-soft: #f5f8fb;
-
   --border: rgba(11, 18, 32, 0.08);
 }
 
-/* ---------- GLOBAL RESET ---------- */
-
+/* RESET */
 * {
   box-sizing: border-box;
 }
 
 body {
   margin: 0;
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-  color: var(--ink);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: var(--text);
   background: var(--bg);
   line-height: 1.7;
 }
@@ -38,37 +30,35 @@ img {
   display: block;
 }
 
-/* ---------- CONTAINER ---------- */
-
+/* LAYOUT */
 .container {
   width: min(1100px, 92%);
   margin: auto;
 }
 
-/* =========================================================
-   HEADER & NAVIGATION (CENTERED LOGO)
-   ========================================================= */
+/* ================================
+   HEADER
+   ================================ */
 
 .site-header {
   border-bottom: 1px solid var(--border);
-  padding: 28px 0 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  padding: 28px 0 22px;
+  text-align: center;
 }
 
-/* Centered logo */
+/* LOGO */
 .logo-wrapper {
-  display: flex;
-  justify-content: center;
+  display: block;
+  text-align: center;
   margin-bottom: 18px;
 }
 
 .logo {
   height: 46px;
+  margin: 0 auto;
 }
 
-/* Navigation centered below logo */
+/* NAVIGATION */
 .main-nav {
   display: flex;
   justify-content: center;
@@ -78,23 +68,22 @@ img {
 .main-nav a {
   text-decoration: none;
   font-weight: 600;
-  color: var(--ink-soft);
+  color: var(--text-soft);
 }
 
-.main-nav a.active,
-.main-nav a:hover {
+.main-nav a:hover,
+.main-nav a.active {
   color: var(--blue);
 }
 
-/* =========================================================
-   HERO SECTION
-   ========================================================= */
+/* ================================
+   HERO
+   ================================ */
 
 .hero--image {
   background-image: url("../images/hero-gardenia.jpg");
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
   min-height: 75vh;
   display: flex;
   align-items: center;
@@ -110,21 +99,21 @@ img {
 }
 
 .hero h1 {
-  font-size: clamp(34px, 5vw, 54px);
   color: #ffffff;
+  font-size: clamp(34px, 5vw, 54px);
   max-width: 720px;
   margin-bottom: 12px;
 }
 
 .hero p {
-  max-width: 620px;
   color: rgba(255, 255, 255, 0.85);
+  max-width: 620px;
   font-size: 18px;
 }
 
-/* =========================================================
-   SECTIONS & TYPOGRAPHY
-   ========================================================= */
+/* ================================
+   SECTIONS
+   ================================ */
 
 .section {
   padding: 80px 0;
@@ -141,13 +130,13 @@ img {
 
 .section p {
   max-width: 720px;
-  color: var(--ink-soft);
+  color: var(--text-soft);
   margin-bottom: 18px;
 }
 
-/* =========================================================
-   TWO COLUMN ABOUT SECTION
-   ========================================================= */
+/* ================================
+   TWO COLUMN LAYOUT
+   ================================ */
 
 .two-column {
   display: grid;
@@ -158,21 +147,19 @@ img {
 
 .image-content img {
   border-radius: 20px;
-  object-fit: cover;
 }
 
-/* =========================================================
-   RESPONSIVE GOOGLE MAP
-   ========================================================= */
+/* ================================
+   GOOGLE MAP
+   ================================ */
 
 .map-container {
   position: relative;
   width: 100%;
   padding-bottom: 56.25%;
-  height: 0;
-  overflow: hidden;
-  border-radius: 18px;
   margin-top: 28px;
+  border-radius: 18px;
+  overflow: hidden;
   border: 1px solid var(--border);
 }
 
@@ -184,9 +171,9 @@ img {
   border: 0;
 }
 
-/* =========================================================
+/* ================================
    CONTACT PAGE
-   ========================================================= */
+   ================================ */
 
 .contact-box {
   margin-top: 36px;
@@ -202,9 +189,9 @@ img {
   font-size: 16px;
 }
 
-/* =========================================================
+/* ================================
    FOOTER
-   ========================================================= */
+   ================================ */
 
 .footer {
   border-top: 1px solid var(--border);
@@ -219,20 +206,16 @@ img {
 
 .muted {
   font-size: 14px;
-  color: var(--ink-soft);
+  color: var(--text-soft);
 }
 
-/* =========================================================
+/* ================================
    RESPONSIVE
-   ========================================================= */
+   ================================ */
 
 @media (max-width: 900px) {
   .two-column {
     grid-template-columns: 1fr;
-  }
-
-  .image-content {
-    margin-top: 24px;
   }
 }
 
@@ -240,7 +223,6 @@ img {
   .main-nav {
     flex-direction: column;
     gap: 14px;
-    text-align: center;
   }
 
   .hero-overlay {
