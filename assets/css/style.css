@@ -1,20 +1,25 @@
-/* ===============================
-   Visit Gardenia – Official Site
+/* =========================================================
+   Visit Gardenia – Official Website
+   Clean, cultural, museum-grade design
    HTML + CSS only
-   =============================== */
+   ========================================================= */
+
+/* ---------- ROOT VARIABLES ---------- */
 
 :root {
   --blue: #0b4fa2;
   --teal: #1aa6a0;
 
   --ink: #0b1220;
-  --ink-soft: rgba(11,18,32,0.75);
+  --ink-soft: rgba(11, 18, 32, 0.75);
 
   --bg: #ffffff;
   --bg-soft: #f5f8fb;
 
-  --border: rgba(11,18,32,0.08);
+  --border: rgba(11, 18, 32, 0.08);
 }
+
+/* ---------- GLOBAL RESET ---------- */
 
 * {
   box-sizing: border-box;
@@ -25,20 +30,28 @@ body {
   font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
   color: var(--ink);
   background: var(--bg);
-  line-height: 1.6;
+  line-height: 1.7;
 }
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ---------- CONTAINER ---------- */
 
 .container {
   width: min(1100px, 92%);
   margin: auto;
 }
 
-/* ================= HEADER ================= */
+/* =========================================================
+   HEADER & NAVIGATION
+   ========================================================= */
 
 .site-header {
   border-bottom: 1px solid var(--border);
   padding: 20px 0;
-  position: relative;
 }
 
 .logo-wrapper {
@@ -61,35 +74,17 @@ body {
   text-decoration: none;
   font-weight: 600;
   color: var(--ink-soft);
+  position: relative;
 }
 
-.main-nav a.active {
+.main-nav a.active,
+.main-nav a:hover {
   color: var(--blue);
 }
 
-/* ================= BURGER MENU ================= */
-
-#menu-toggle {
-  display: none;
-}
-
-.burger {
-  display: none;
-  position: absolute;
-  top: 26px;
-  right: 20px;
-  cursor: pointer;
-}
-
-.burger span {
-  display: block;
-  width: 24px;
-  height: 2px;
-  background: var(--ink);
-  margin: 5px 0;
-}
-
-/* ================= HERO ================= */
+/* =========================================================
+   HERO SECTION
+   ========================================================= */
 
 .hero--image {
   background-image: url("../images/hero-gardenia.jpg");
@@ -103,7 +98,7 @@ body {
 
 .hero-overlay {
   width: 100%;
-  padding: 100px 0;
+  padding: 110px 0;
   background: linear-gradient(
     rgba(11, 18, 32, 0.55),
     rgba(11, 18, 32, 0.55)
@@ -111,20 +106,24 @@ body {
 }
 
 .hero h1 {
-  font-size: clamp(32px, 5vw, 52px);
+  font-size: clamp(34px, 5vw, 54px);
   color: #ffffff;
-  max-width: 700px;
+  max-width: 720px;
+  margin-bottom: 12px;
 }
 
 .hero p {
-  max-width: 600px;
-  color: rgba(255,255,255,0.85);
+  max-width: 620px;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 18px;
 }
 
-/* ================= SECTIONS ================= */
+/* =========================================================
+   SECTIONS & TYPOGRAPHY
+   ========================================================= */
 
 .section {
-  padding: 70px 0;
+  padding: 80px 0;
 }
 
 .section-soft {
@@ -132,34 +131,35 @@ body {
 }
 
 .section h2 {
-  font-size: 28px;
+  font-size: 30px;
+  margin-bottom: 20px;
 }
 
 .section p {
-  max-width: 700px;
+  max-width: 720px;
   color: var(--ink-soft);
+  margin-bottom: 18px;
 }
 
-/* ================= TWO COLUMN ABOUT ================= */
+/* =========================================================
+   TWO COLUMN LAYOUT (ABOUT)
+   ========================================================= */
 
 .two-column {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
-  gap: 48px;
+  gap: 56px;
   align-items: center;
 }
 
-.text-content p {
-  margin-bottom: 18px;
-}
-
 .image-content img {
-  width: 100%;
-  border-radius: 18px;
+  border-radius: 20px;
   object-fit: cover;
 }
 
-/* ================= MAP ================= */
+/* =========================================================
+   MAP (RESPONSIVE)
+   ========================================================= */
 
 .map-container {
   position: relative;
@@ -168,7 +168,7 @@ body {
   height: 0;
   overflow: hidden;
   border-radius: 18px;
-  margin-top: 24px;
+  margin-top: 28px;
   border: 1px solid var(--border);
 }
 
@@ -180,13 +180,41 @@ body {
   border: 0;
 }
 
-/* ================= FOOTER ================= */
+/* =========================================================
+   CONTACT PAGE
+   ========================================================= */
+
+.contact-box {
+  margin-top: 36px;
+  padding: 32px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  background: #ffffff;
+  max-width: 520px;
+}
+
+.contact-box p {
+  margin-bottom: 18px;
+  font-size: 16px;
+}
+
+.contact-box strong {
+  color: var(--ink);
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
 
 .footer {
   border-top: 1px solid var(--border);
-  padding: 32px 0;
+  padding: 36px 0;
   text-align: center;
   background: #fafafa;
+}
+
+.footer p {
+  margin: 6px 0;
 }
 
 .muted {
@@ -194,7 +222,9 @@ body {
   color: var(--ink-soft);
 }
 
-/* ================= MOBILE ================= */
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
 
 @media (max-width: 900px) {
   .two-column {
@@ -207,24 +237,18 @@ body {
 }
 
 @media (max-width: 768px) {
-
-  .burger {
-    display: block;
-  }
-
   .main-nav {
-    display: none;
     flex-direction: column;
-    gap: 16px;
-    margin-top: 20px;
+    gap: 14px;
     text-align: center;
   }
 
-  #menu-toggle:checked + .burger + .main-nav {
-    display: flex;
+  .hero-overlay {
+    padding: 90px 0;
   }
 
-  .logo-wrapper {
-    margin-bottom: 8px;
+  .hero h1 {
+    font-size: 32px;
   }
 }
+
