@@ -46,35 +46,39 @@ img {
 }
 
 /* =========================================================
-   HEADER & NAVIGATION
+   HEADER & NAVIGATION (CENTERED LOGO)
    ========================================================= */
 
 .site-header {
   border-bottom: 1px solid var(--border);
-  padding: 20px 0;
+  padding: 28px 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
+/* Centered logo */
 .logo-wrapper {
-  text-align: center;
-  margin-bottom: 16px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 18px;
 }
 
 .logo {
   height: 46px;
 }
 
-/* Navigation */
+/* Navigation centered below logo */
 .main-nav {
   display: flex;
   justify-content: center;
-  gap: 32px;
+  gap: 36px;
 }
 
 .main-nav a {
   text-decoration: none;
   font-weight: 600;
   color: var(--ink-soft);
-  position: relative;
 }
 
 .main-nav a.active,
@@ -142,7 +146,7 @@ img {
 }
 
 /* =========================================================
-   TWO COLUMN LAYOUT (ABOUT)
+   TWO COLUMN ABOUT SECTION
    ========================================================= */
 
 .two-column {
@@ -158,7 +162,7 @@ img {
 }
 
 /* =========================================================
-   MAP (RESPONSIVE)
+   RESPONSIVE GOOGLE MAP
    ========================================================= */
 
 .map-container {
@@ -196,10 +200,6 @@ img {
 .contact-box p {
   margin-bottom: 18px;
   font-size: 16px;
-}
-
-.contact-box strong {
-  color: var(--ink);
 }
 
 /* =========================================================
@@ -251,4 +251,3 @@ img {
     font-size: 32px;
   }
 }
-
